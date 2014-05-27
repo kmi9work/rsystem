@@ -1,0 +1,23 @@
+<table class="top_table">
+	<td>
+		<tr>
+			<%= form_tag({controller: "news_parsers", action: "create"}, method: "post") do %>
+				<%= text_field_tag :query1 %>
+				<%= text_field_tag :query2 %>
+				<%= text_field_tag :query3 %>
+				<%= submit_tag "Старт" %>
+			<% end %>
+		</tr>
+		<tr align="right">
+			<%= link_to "Правила составления запросов в Yandex.", "http://help.yandex.ru/search/query-language/crib-sheet.xml" %>
+		</tr>
+	</td>
+
+</table>
+<hr>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

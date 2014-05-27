@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RSystem</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="top">
+	<h1>Система информационного реагирования на ЧС</h1>
+	<div style="display: inline-block;">
+		<%= form_tag({controller: "news_parsers", action: "create"}, method: "post") do %>
+			<%= text_field_tag 'query[1]' %>
+			<%= text_field_tag 'query[2]' %>
+			<%= text_field_tag 'query[3]' %>
+			<%= submit_tag "Старт" %>
+		<% end %>
+	</div>		
+	<div style="display: inline-block; float: right">
+		<%= link_to "Правила составления запросов в Yandex.", "http://help.yandex.ru/search/query-language/crib-sheet.xml", target: "_blank" %>
+	</div>		
+</div>
+
+<hr>
+
+<%= yield %>
+
+</body>
+</html>

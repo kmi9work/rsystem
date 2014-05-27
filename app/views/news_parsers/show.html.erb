@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<div style="display: inline-block"> Запросы: </div>
+<% @news_parser.queries.each do |query| %>
+	<div class="query">
+		<%= query %>
+	</div>	
+<% end %>
+
+<% i = 0 %> 
+<% @news_parser.contents.each do |link, content| %>
+	<p> 
+		<%= link_to "#anc#{i += 1}" do %>
+			<b> <%= content[0] %> </b> (<%= link %>)
+		<% end %>
+	</p>
+<% end %>
+
+<% i = 0 %> 
+<% @news_parser.contents.each do |link, content| %>
+	<div class="article">
+		<p><a name="<%= "anc#{i += 1}" %>"></a><b> <%= content[0] %> </b> </p>
+		<p> <%= link_to link, link %> </p>
+		<p> <%= content[1] %> </p>
+	</div>
+<% end %>
+
+

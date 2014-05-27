@@ -1,0 +1,17 @@
+<%= form_for(@news_parser) do |f| %>
+  <% if @news_parser.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@news_parser.errors.count, "error") %> prohibited this news_parser from being saved:</h2>
+
+      <ul>
+      <% @news_parser.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
